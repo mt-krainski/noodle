@@ -1,9 +1,9 @@
 <robot name="noodle_leg" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <link name="world"/>
+  <link name="map"/>
 
   <joint name="fixed" type="fixed">
-    <parent link="world"/>
+    <parent link="map"/>
     <child link="femur"/>
   </joint>
 
@@ -15,5 +15,20 @@
     </visual>
     <xacro:include filename="$(find noodle)/cad/urdf/femur.urdf"/>
   </link>
+
+  <link name="servo">
+    <visual>
+      <geometry>
+        <mesh filename="package://noodle/cad/stl/servo.stl" scale="1e-3 1e-3 1e-3"/>
+      </geometry>
+    </visual>
+    <xacro:include filename="$(find noodle)/cad/urdf/servo.urdf"/>
+  </link>
+
+  <joint name="femur-to-servo" type="fixed">
+    <parent link="femur"/>
+    <child link="servo"/>
+    <origin xyz="24.2e-3 25e-3 250e-3" rpy="${pi/2} ${pi} 0"/>
+  </joint>
 
 </robot>
