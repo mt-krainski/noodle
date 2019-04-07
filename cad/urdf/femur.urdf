@@ -1,5 +1,13 @@
-<inertial>
-  <origin rpy="0 0 0" xyz="-1.876e-06 -0.0 0.197725525"/>
-  <mass value="0.047476715625"/>
-  <inertia ixx="0.00038612592" ixy="-1.9791e-15" ixz="-1.19161863288e-08" iyy="0.0003861305856" iyz="3.60234e-14" izz="1.9380981375e-06"/>
-</inertial>
+<root>
+  <inertial>
+    <origin rpy="0 0 0" xyz="-1.876e-06 -0.0 0.197725525"/>
+    <mass value="0.047476715625"/>
+    <inertia ixx="0.00038612592" ixy="-1.9791e-15" ixz="-1.19161863288e-08" iyy="0.0003861305856" iyz="3.60234e-14" izz="1.9380981375e-06"/>
+  </inertial>
+  <collision>
+    <geometry>
+      <box size="0.02995136 0.02997567 0.313"/>
+    </geometry>
+    <origin xyz="2.432e-05 0.0 0.1565"/>
+  </collision>
+</root>

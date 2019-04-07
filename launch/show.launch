@@ -1,0 +1,6 @@
+<launch>
+  <arg name="model" default="$(find noodle)/urdf/leg.xacro"/>
+
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)" />
+  <node name="rviz" pkg="rviz" type="rviz" required="true" />
+</launch>
